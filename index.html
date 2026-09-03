@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Myntara Technologies - Transforming Businesses Through Artificial Intelligence, Process Automation, Enterprise Software, Mobile Apps, and Digital Innovation." />
+    <meta name="keywords" content="AI, Process Automation, Enterprise Software, Mobile Apps, IT Consulting, Myntara Technologies, 3D Portfolio, Digital Transformation" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Myntara Technologies | Digital Transformation & AI" />
+    <meta property="og:description" content="Transforming Businesses Through Artificial Intelligence, Automation and Digital Innovation." />
+    <meta property="og:type" content="website" />
+    
+    <title>Myntara Technologies | AI, Automation & Enterprise Software</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- 3D Constellation Background Canvas -->
+    <canvas id="webgl-bg"></canvas>
+
+    <!-- Header / Navigation -->
+    <header class="glass-header" id="navbar">
+      <div class="nav-container">
+        <a href="#hero" class="logo-area" aria-label="Myntara Technologies Home">
+          <!-- Logo SVG mapping the icon in screenshot -->
+          <svg class="logo-svg" viewBox="0 0 100 100" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+            <rect width="100" height="100" rx="24" fill="#0D1F3D" />
+            <!-- Connections -->
+            <line x1="25" y1="75" x2="25" y2="25" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" />
+            <line x1="25" y1="25" x2="50" y2="55" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" />
+            <line x1="50" y1="55" x2="75" y2="25" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" />
+            <line x1="75" y1="25" x2="75" y2="75" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" />
+            <!-- Nodes -->
+            <circle cx="25" cy="75" r="7" fill="#FFFFFF" />
+            <circle cx="25" cy="25" r="7" fill="#34D399" />
+            <circle cx="50" cy="55" r="7" fill="#FFFFFF" />
+            <circle cx="75" cy="25" r="7" fill="#34D399" />
+            <circle cx="75" cy="75" r="7" fill="#FFFFFF" />
+          </svg>
+          <span class="logo-text">MYNTARA</span>
+        </a>
+        <nav class="nav-links-desktop" aria-label="Main Navigation">
+          <a href="#hero" class="nav-link active">Home</a>
+          <a href="#who-we-are" class="nav-link">Who We Are</a>
+          <a href="#services" class="nav-link">Services</a>
+          <a href="#technologies" class="nav-link">Tech</a>
+          <a href="#lifecycle" class="nav-link">Process</a>
+          <a href="#why-us" class="nav-link">Why Us</a>
+          <a href="#contact" class="nav-btn">Get In Touch</a>
+        </nav>
+        <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle Menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer Backdrop & Drawer -->
+    <div class="mobile-drawer-backdrop" id="mobile-backdrop"></div>
+    <div class="mobile-drawer" id="mobile-drawer">
+      <div class="mobile-drawer-header">
+        <a href="#hero" class="logo-area" aria-label="Myntara Technologies Home">
+          <svg class="logo-svg" viewBox="0 0 100 100" width="34" height="34" xmlns="http://www.w3.org/2000/svg">
+            <rect width="100" height="100" rx="24" fill="#0D1F3D" />
+            <line x1="25" y1="75" x2="25" y2="25" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" />
+            <line x1="25" y1="25" x2="50" y2="55" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" />
+            <line x1="50" y1="55" x2="75" y2="25" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" />
+            <line x1="75" y1="25" x2="75" y2="75" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" />
+            <circle cx="25" cy="75" r="7" fill="#FFFFFF" />
+            <circle cx="25" cy="25" r="7" fill="#34D399" />
+            <circle cx="50" cy="55" r="7" fill="#FFFFFF" />
+            <circle cx="75" cy="25" r="7" fill="#34D399" />
+            <circle cx="75" cy="75" r="7" fill="#FFFFFF" />
+          </svg>
+          <span class="logo-text">MYNTARA</span>
+        </a>
+        <button class="mobile-drawer-close" id="mobile-close" aria-label="Close Navigation Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <nav class="nav-links-mobile">
+        <a href="#hero" class="drawer-link active">Home</a>
+        <a href="#who-we-are" class="drawer-link">Who We Are</a>
+        <a href="#services" class="drawer-link">Services</a>
+        <a href="#technologies" class="drawer-link">Technologies</a>
+        <a href="#lifecycle" class="drawer-link">Lifecycle</a>
+        <a href="#why-us" class="drawer-link">Why Us</a>
+        <a href="#contact" class="drawer-btn primary-btn">Get In Touch</a>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Section -->
+      <section id="hero" class="hero-section">
+        <div class="section-container hero-grid">
+          <div class="hero-content">
+            <div class="glow-tag">
+              <span class="glow-dot"></span>
+              Future Ready Innovation
+            </div>
+            <h1 class="hero-title animate-title">
+              MYNTARA <br><span class="gradient-text">TECHNOLOGIES</span>
+            </h1>
+            <p class="hero-subtitle">
+              Transforming Businesses Through Artificial Intelligence, Automation and Digital Innovation
+            </p>
+            <div class="hero-tags">
+              <span class="hero-tag">AI</span>
+              <span class="tag-separator">•</span>
+              <span class="hero-tag">PROCESS AUTOMATION</span>
+              <span class="tag-separator">•</span>
+              <span class="hero-tag">ENTERPRISE SOFTWARE</span>
+              <span class="tag-separator">•</span>
+              <span class="hero-tag">MOBILE APPS</span>
+              <span class="tag-separator">•</span>
+              <span class="hero-tag">IT CONSULTING</span>
+            </div>
+            <div class="hero-ctas">
+              <a href="#contact" class="primary-btn">Explore Solutions</a>
+              <a href="#services" class="secondary-btn">Our Services</a>
+            </div>
+          </div>
+          <!-- 3D Interactive Globe Container with HUD Annotations -->
+          <div class="hero-3d-container">
+            <div id="globe-canvas-container" class="globe-wrapper"></div>
+            
+            <!-- Floating Tech HUD Annotations matching design -->
+            <div class="globe-hud-tag tag-top-right">
+              <span class="hud-label">DATA STREAMS</span>
+              <div class="hud-node-cluster">
+                <svg width="46" height="34" viewBox="0 0 46 34" fill="none">
+                  <circle cx="28" cy="12" r="4" fill="#0284c7" />
+                  <circle cx="28" cy="12" r="7" stroke="#0284c7" stroke-opacity="0.4" stroke-width="1.5" />
+                  <line x1="28" y1="12" x2="40" y2="4" stroke="#0284c7" stroke-width="1.2" stroke-opacity="0.7" />
+                  <circle cx="40" cy="4" r="2.5" fill="#38bdf8" />
+                  <line x1="28" y1="12" x2="42" y2="24" stroke="#0284c7" stroke-width="1.2" stroke-opacity="0.7" />
+                  <circle cx="42" cy="24" r="2.5" fill="#38bdf8" />
+                  <line x1="28" y1="12" x2="8" y2="28" stroke="#0284c7" stroke-width="1.2" stroke-dasharray="2 2" />
+                </svg>
+              </div>
+            </div>
+
+            <div class="globe-hud-tag tag-top-left">
+              <div class="hud-node-cluster">
+                <svg width="40" height="30" viewBox="0 0 40 30" fill="none">
+                  <circle cx="16" cy="14" r="3.5" fill="#0d9488" />
+                  <circle cx="16" cy="14" r="6.5" stroke="#0d9488" stroke-opacity="0.4" stroke-width="1.5" />
+                  <line x1="16" y1="14" x2="6" y2="6" stroke="#0d9488" stroke-width="1.2" stroke-opacity="0.7" />
+                  <circle cx="6" cy="6" r="2" fill="#2dd4bf" />
+                  <line x1="16" y1="14" x2="34" y2="22" stroke="#0d9488" stroke-width="1.2" stroke-dasharray="2 2" />
+                </svg>
+              </div>
+              <span class="hud-label">DATA STREAMS</span>
+            </div>
+
+            <div class="globe-hud-tag tag-mid-left">
+              <span class="hud-label">CORE AI</span>
+              <div class="hud-node-cluster">
+                <svg width="34" height="24" viewBox="0 0 34 24" fill="none">
+                  <circle cx="10" cy="12" r="3" fill="#8b5cf6" />
+                  <circle cx="10" cy="12" r="6" stroke="#8b5cf6" stroke-opacity="0.4" stroke-width="1.2" />
+                  <line x1="10" y1="12" x2="28" y2="12" stroke="#8b5cf6" stroke-width="1.2" stroke-dasharray="2 2" />
+                </svg>
+              </div>
+            </div>
+
+            <div class="globe-hud-tag tag-bottom-right">
+              <div class="hud-node-cluster">
+                <svg width="44" height="34" viewBox="0 0 44 34" fill="none">
+                  <circle cx="20" cy="18" r="3.5" fill="#0284c7" />
+                  <circle cx="20" cy="18" r="7" stroke="#0284c7" stroke-opacity="0.4" stroke-width="1.5" />
+                  <line x1="20" y1="18" x2="36" y2="26" stroke="#0284c7" stroke-width="1.2" stroke-opacity="0.7" />
+                  <circle cx="36" cy="26" r="2.5" fill="#38bdf8" />
+                  <line x1="20" y1="18" x2="6" y2="6" stroke="#0284c7" stroke-width="1.2" stroke-dasharray="2 2" />
+                </svg>
+              </div>
+              <span class="hud-label">CLOUD NODES</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Who We Are Section -->
+      <section id="who-we-are" class="who-we-are-section">
+        <div class="section-container">
+          <div class="section-header">
+            <span class="section-subtitle">Introduction</span>
+            <h2 class="section-title">Who We Are</h2>
+          </div>
+          <div class="who-we-are-grid">
+            <div class="who-we-are-text">
+              <p class="lead-text">
+                Myntara Technologies Pvt Ltd is an IT consulting and software engineering company focused on delivering enterprise-grade digital transformation solutions.
+              </p>
+              <p class="body-text">
+                We partner with organizations to automate business processes, build AI-enabled applications, modernize legacy operations, and improve productivity across every level of the enterprise — from strategy and design through deployment and long-term support.
+              </p>
+            </div>
+            <div class="who-we-are-cards">
+              <!-- Card 1 -->
+              <div class="premium-card tilt-card" data-tilt>
+                <div class="card-icon-wrapper blue-glow">
+                  <!-- AI Enabled Icon -->
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <path d="M9 3v18M15 3v18M3 9h18M3 15h18" />
+                    <rect x="9" y="9" width="6" height="6" fill="currentColor" fill-opacity="0.2" />
+                  </svg>
+                </div>
+                <div class="card-body">
+                  <h3>AI-Enabled Applications</h3>
+                  <p>Intelligent systems built around your workflows</p>
+                </div>
+              </div>
+              <!-- Card 2 -->
+              <div class="premium-card tilt-card" data-tilt>
+                <div class="card-icon-wrapper blue-glow">
+                  <!-- Transformation Icon -->
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                  </svg>
+                </div>
+                <div class="card-body">
+                  <h3>End-to-End Transformation</h3>
+                  <p>From strategy to deployment and beyond</p>
+                </div>
+              </div>
+              <!-- Card 3 -->
+              <div class="premium-card tilt-card" data-tilt>
+                <div class="card-icon-wrapper blue-glow">
+                  <!-- Architecture Icon -->
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  </svg>
+                </div>
+                <div class="card-body">
+                  <h3>Enterprise-Grade Architecture</h3>
+                  <p>Secure, scalable, built to last</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Core Services Section -->
+      <section id="services" class="services-section">
+        <div class="section-container">
+          <div class="section-header center-align">
+            <span class="section-subtitle">Our Expertise</span>
+            <h2 class="section-title">Core Services</h2>
+            <p class="section-desc">Comprehensive capabilities across the digital delivery lifecycle</p>
+          </div>
+          <div class="services-grid">
+            <!-- Service 1 -->
+            <div class="service-card tilt-card" data-tilt>
+              <div class="service-icon blue-glow">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <path d="M9 3v18M15 3v18M3 9h18M3 15h18" />
+                </svg>
+              </div>
+              <h3>AI-Powered Business Apps</h3>
+              <p>Applications with embedded intelligence</p>
+            </div>
+            <!-- Service 2 -->
+            <div class="service-card tilt-card" data-tilt>
+              <div class="service-icon blue-glow">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 17h-11a3 3 0 0 1 -3-3v-7a3 3 0 0 1 3-3h11" />
+                  <path d="M16 11l4-4l-4-4" />
+                  <path d="M7 7h11a3 3 0 0 1 3 3v7a3 3 0 0 1 -3 3h-11" />
+                  <path d="M8 13l-4 4l4 4" />
+                </svg>
+              </div>
+              <h3>Process Automation</h3>
+              <p>Workflow systems that eliminate manual effort</p>
+            </div>
+            <!-- Service 3 -->
+            <div class="service-card tilt-card" data-tilt>
+              <div class="service-icon blue-glow">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="3" width="20" height="14" rx="2" />
+                  <path d="M8 21h8M12 17v4" />
+                </svg>
+              </div>
+              <h3>Enterprise Web Apps</h3>
+              <p>Robust platforms built for scale</p>
+            </div>
+            <!-- Service 4 -->
+            <div class="service-card tilt-card" data-tilt>
+              <div class="service-icon blue-glow">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="5" y="2" width="14" height="20" rx="2" />
+                  <path d="M12 18h.01" />
+                </svg>
+              </div>
+              <h3>Mobile App Development</h3>
+              <p>Native and cross-platform experiences</p>
+            </div>
+            <!-- Service 5 -->
+            <div class="service-card tilt-card" data-tilt>
+              <div class="service-icon blue-glow">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M23 6l-9.5 9.5-5-5L1 18" />
+                  <path d="M17 6h6v6" />
+                </svg>
+              </div>
+              <h3>IT Consulting</h3>
+              <p>Digital transformation strategy & execution</p>
+            </div>
+            <!-- Service 6 -->
+            <div class="service-card tilt-card" data-tilt>
+              <div class="service-icon blue-glow">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 14.89A6 6 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.24" />
+                </svg>
+              </div>
+              <h3>Cloud & On-Prem Deployment</h3>
+              <p>Flexible infrastructure, your way</p>
+            </div>
+            <!-- Service 7 -->
+            <div class="service-card tilt-card" data-tilt>
+              <div class="service-icon blue-glow">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="18" cy="5" r="3" />
+                  <circle cx="6" cy="12" r="3" />
+                  <circle cx="18" cy="19" r="3" />
+                  <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+                  <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+                </svg>
+              </div>
+              <h3>API Integration</h3>
+              <p>Seamless connections across your ecosystem</p>
+            </div>
+            <!-- Service 8 -->
+            <div class="service-card tilt-card" data-tilt>
+              <div class="service-icon blue-glow">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <circle cx="12" cy="12" r="4" />
+                  <path d="M4.93 4.93l4.24 4.24M14.83 14.83l4.24 4.24M14.83 9.17l4.24-4.24M4.93 19.07l4.24-4.24" />
+                </svg>
+              </div>
+              <h3>Maintenance & Support</h3>
+              <p>Annual support that keeps systems running</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technology We Work With Section [NEW] -->
+      <section id="technologies" class="tech-section">
+        <div class="section-container">
+          <div class="section-header center-align">
+            <span class="section-subtitle">Our Stack</span>
+            <h2 class="section-title">Technology We Work With</h2>
+            <p class="section-desc">A modern, versatile stack matched to each project's needs</p>
+          </div>
+          <div class="tech-grid">
+            <!-- Col 1: Frontend & Mobile -->
+            <div class="tech-column">
+              <div class="tech-header-tag">Frontend & Mobile</div>
+              <div class="tech-items-stack">
+                <div class="tech-item-card">React</div>
+                <div class="tech-item-card">Angular</div>
+                <div class="tech-item-card">Flutter</div>
+                <div class="tech-item-card">React Native</div>
+              </div>
+            </div>
+            <!-- Col 2: Backend -->
+            <div class="tech-column">
+              <div class="tech-header-tag">Backend</div>
+              <div class="tech-items-stack">
+                <div class="tech-item-card">Node.js</div>
+                <div class="tech-item-card">Java</div>
+                <div class="tech-item-card">.NET</div>
+                <div class="tech-item-card">Python</div>
+              </div>
+            </div>
+            <!-- Col 3: Database -->
+            <div class="tech-column">
+              <div class="tech-header-tag">Database</div>
+              <div class="tech-items-stack">
+                <div class="tech-item-card">PostgreSQL</div>
+                <div class="tech-item-card">SQL Server</div>
+              </div>
+            </div>
+            <!-- Col 4: Cloud Platforms -->
+            <div class="tech-column">
+              <div class="tech-header-tag">Cloud Platforms</div>
+              <div class="tech-items-stack">
+                <div class="tech-item-card">AWS</div>
+                <div class="tech-item-card">Azure</div>
+                <div class="tech-item-card">Google Cloud</div>
+              </div>
+            </div>
+            <!-- Col 5: AI & Data -->
+            <div class="tech-column">
+              <div class="tech-header-tag">AI & Data</div>
+              <div class="tech-items-stack">
+                <div class="tech-item-card">AI / LLM Integration</div>
+                <div class="tech-item-card">OCR</div>
+                <div class="tech-item-card">Analytics</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Delivery Lifecycle Section -->
+      <section id="lifecycle" class="lifecycle-section">
+        <div class="section-container">
+          <div class="section-header center-align">
+            <span class="section-subtitle">Execution Pipeline</span>
+            <h2 class="section-title">Delivery Lifecycle</h2>
+            <p class="section-desc">A continuous, closed-loop ten-stage delivery pipeline from consultation to continuous improvement</p>
+          </div>
+
+          <!-- Circular Delivery Cycle Wheel -->
+          <div class="lifecycle-cycle-container">
+            <!-- Center Core Hub -->
+            <div class="cycle-center-hub">
+              <div class="hub-pulse-ring"></div>
+              <div class="hub-inner-content">
+                <div class="hub-icon">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67" />
+                  </svg>
+                </div>
+                <span class="hub-tag">CONTINUOUS CYCLE</span>
+                <span class="hub-title">Agile Delivery</span>
+                <span class="hub-subtitle">Iterate • Scale • Evolve</span>
+              </div>
+            </div>
+
+            <!-- SVG Continuous Orbital Orbit Track -->
+            <svg class="cycle-track-svg" viewBox="0 0 600 600">
+              <defs>
+                <linearGradient id="cycleTrackGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#0284c7" />
+                  <stop offset="35%" stop-color="#0d9488" />
+                  <stop offset="70%" stop-color="#8b5cf6" />
+                  <stop offset="100%" stop-color="#0284c7" />
+                </linearGradient>
+              </defs>
+              <circle cx="300" cy="300" r="230" fill="none" stroke="url(#cycleTrackGrad)" stroke-width="2.5" stroke-dasharray="8 6" opacity="0.65" class="spinning-track" />
+              <circle cx="300" cy="300" r="230" fill="none" stroke="rgba(2, 132, 199, 0.12)" stroke-width="1" />
+            </svg>
+
+            <!-- 10 Cyclic Nodes Arranged in a Complete Loop -->
+            <div class="cycle-nodes-wrapper">
+              <!-- Stage 1 -->
+              <div class="cycle-node node-1">
+                <div class="node-badge dark-blue-node">
+                  <span class="node-number">1</span>
+                </div>
+                <div class="node-info">
+                  <span class="node-title">Consult</span>
+                  <span class="node-desc">Discovery</span>
+                </div>
+              </div>
+
+              <!-- Stage 2 -->
+              <div class="cycle-node node-2">
+                <div class="node-badge slate-blue-node">
+                  <span class="node-number">2</span>
+                </div>
+                <div class="node-info">
+                  <span class="node-title">Analyze</span>
+                  <span class="node-desc">Scope</span>
+                </div>
+              </div>
+
+              <!-- Stage 3 -->
+              <div class="cycle-node node-3">
+                <div class="node-badge dark-blue-node">
+                  <span class="node-number">3</span>
+                </div>
+                <div class="node-info">
+                  <span class="node-title">Design</span>
+                  <span class="node-desc">Architecture</span>
+                </div>
+              </div>
+
+              <!-- Stage 4 -->
+              <div class="cycle-node node-4">
+                <div class="node-badge slate-blue-node">
+                  <span class="node-number">4</span>
+                </div>
+                <div class="node-info">
+                  <span class="node-title">Develop</span>
+                  <span class="node-desc">Engineering</span>
+                </div>
+              </div>
+
+              <!-- Stage 5 -->
+              <div class="cycle-node node-5">
+                <div class="node-badge dark-blue-node">
+                  <span class="node-number">5</span>
+                </div>
+                <div class="node-info">
+                  <span class="node-title">Test</span>
+                  <span class="node-desc">QA & Security</span>
+                </div>
+              </div>
+
+              <!-- Stage 6 -->
+              <div class="cycle-node node-6">
+                <div class="node-badge slate-blue-node">
+                  <span class="node-number">6</span>
+                </div>
+                <div class="node-info">
+                  <span class="node-title">UAT</span>
+                  <span class="node-desc">Validation</span>
+                </div>
+              </div>
+
+              <!-- Stage 7 -->
+              <div class="cycle-node node-7">
+                <div class="node-badge dark-blue-node">
+                  <span class="node-number">7</span>
+                </div>
+                <div class="node-info">
+                  <span class="node-title">Deploy</span>
+                  <span class="node-desc">Production</span>
+                </div>
+              </div>
+
+              <!-- Stage 8 -->
+              <div class="cycle-node node-8">
+                <div class="node-badge slate-blue-node">
+                  <span class="node-number">8</span>
+                </div>
+                <div class="node-info">
+                  <span class="node-title">Train</span>
+                  <span class="node-desc">Enablement</span>
+                </div>
+              </div>
+
+              <!-- Stage 9 -->
+              <div class="cycle-node node-9">
+                <div class="node-badge dark-blue-node">
+                  <span class="node-number">9</span>
+                </div>
+                <div class="node-info">
+                  <span class="node-title">Support</span>
+                  <span class="node-desc">Maintenance</span>
+                </div>
+              </div>
+
+              <!-- Stage 10 -->
+              <div class="cycle-node node-10">
+                <div class="node-badge teal-node">
+                  <span class="node-number">10</span>
+                </div>
+                <div class="node-info">
+                  <span class="node-title">Continuous<br>Improvement</span>
+                  <span class="node-desc">Feedback Loop ➔</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Deployment & Go-Live Support Section [NEW] -->
+      <section id="deployment" class="deployment-section">
+        <div class="section-container">
+          <div class="section-header">
+            <span class="section-subtitle">Integration</span>
+            <h2 class="section-title">Deployment & Go-Live Support</h2>
+            <p class="section-desc">Infrastructure that fits your environment, backed by hands-on rollout support</p>
+          </div>
+          <div class="deployment-grid">
+            <div class="deployment-left">
+              <div class="deploy-subheader">FLEXIBLE DEPLOYMENT OPTIONS</div>
+              <div class="deploy-options-stack">
+                <!-- Option 1 -->
+                <div class="deploy-option-card tilt-card" data-tilt>
+                  <div class="deploy-icon-box">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="2" y="2" width="20" height="8" rx="2" />
+                      <rect x="2" y="14" width="20" height="8" rx="2" />
+                      <line x1="6" y1="6" x2="6.01" y2="6" />
+                      <line x1="6" y1="18" x2="6.01" y2="18" />
+                    </svg>
+                  </div>
+                  <h3>Client Server</h3>
+                </div>
+                <!-- Option 2 -->
+                <div class="deploy-option-card tilt-card" data-tilt>
+                  <div class="deploy-icon-box">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg>
+                  </div>
+                  <h3>Private Cloud</h3>
+                </div>
+                <!-- Option 3 -->
+                <div class="deploy-option-card tilt-card" data-tilt>
+                  <div class="deploy-icon-box">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M18 10h-4V6a2 2 0 0 0-4 0v4H6a2 2 0 0 0 0 4h4v4a2 2 0 0 0 4 0v-4h4a2 2 0 0 0 0-4z" />
+                      <path d="M4 14.89A6 6 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.24" />
+                    </svg>
+                  </div>
+                  <h3>Public Cloud</h3>
+                </div>
+                <!-- Option 4 -->
+                <div class="deploy-option-card tilt-card" data-tilt>
+                  <div class="deploy-icon-box">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="2" y="2" width="20" height="8" rx="2" />
+                      <rect x="2" y="14" width="20" height="8" rx="2" />
+                      <line x1="6" y1="6" x2="6.01" y2="6" stroke-width="3" />
+                      <line x1="6" y1="18" x2="6.01" y2="18" stroke-width="3" />
+                    </svg>
+                  </div>
+                  <h3>Hybrid Infrastructure</h3>
+                </div>
+              </div>
+            </div>
+            
+            <div class="deployment-right">
+              <div class="deploy-subheader">GO-LIVE SUPPORT INCLUDES</div>
+              <div class="support-check-panel">
+                <div class="check-item">
+                  <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>User creation & onboarding</span>
+                </div>
+                <div class="check-item">
+                  <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Department & role setup</span>
+                </div>
+                <div class="check-item">
+                  <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Security role configuration</span>
+                </div>
+                <div class="check-item">
+                  <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Data backup procedures</span>
+                </div>
+                <div class="check-item">
+                  <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>System monitoring</span>
+                </div>
+                <div class="check-item">
+                  <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Dedicated go-live support</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Industries We Serve Section -->
+      <section id="industries" class="industries-section">
+        <div class="section-container">
+          <div class="section-header">
+            <span class="section-subtitle">Verticals</span>
+            <h2 class="section-title">Industries We Serve</h2>
+            <p class="section-desc">Domain experience across public and private sector verticals</p>
+          </div>
+          <div class="industries-grid">
+            <div class="industry-item"><div class="industry-glass"><span>Government</span></div></div>
+            <div class="industry-item"><div class="industry-glass"><span>Smart Cities</span></div></div>
+            <div class="industry-item"><div class="industry-glass"><span>Real Estate</span></div></div>
+            <div class="industry-item"><div class="industry-glass"><span>Manufacturing</span></div></div>
+            <div class="industry-item"><div class="industry-glass"><span>Healthcare</span></div></div>
+            <div class="industry-item"><div class="industry-glass"><span>Education</span></div></div>
+            <div class="industry-item"><div class="industry-glass"><span>Logistics</span></div></div>
+            <div class="industry-item"><div class="industry-glass"><span>Retail</span></div></div>
+            <div class="industry-item"><div class="industry-glass"><span>BFSI</span></div></div>
+            <div class="industry-item"><div class="industry-glass"><span>Infrastructure</span></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Myntara Section -->
+      <section id="why-us" class="why-us-section">
+        <div class="section-container">
+          <div class="section-header center-align">
+            <span class="section-subtitle">Our Values</span>
+            <h2 class="section-title">Why Myntara</h2>
+            <p class="section-desc">The principles that guide every engagement</p>
+          </div>
+          <div class="why-us-grid">
+            <!-- Card 1 -->
+            <div class="why-us-card tilt-card" data-tilt>
+              <div class="why-icon teal-glow">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+              </div>
+              <h3>Business-First Approach</h3>
+              <p>Every engagement starts with your goals, not just the technology.</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="why-us-card tilt-card" data-tilt>
+              <div class="why-icon teal-glow">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                </svg>
+              </div>
+              <h3>Scalable Architecture</h3>
+              <p>Systems designed to grow with your organization.</p>
+            </div>
+            <!-- Card 3 -->
+            <div class="why-us-card tilt-card" data-tilt>
+              <div class="why-icon teal-glow">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+              </div>
+              <h3>Secure Development</h3>
+              <p>Security built into every layer of the lifecycle.</p>
+            </div>
+            <!-- Card 4 -->
+            <div class="why-us-card tilt-card" data-tilt>
+              <div class="why-icon teal-glow">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 6v6l4 2" />
+                </svg>
+              </div>
+              <h3>Transparent Execution</h3>
+              <p>Clear visibility into progress, timelines and decisions.</p>
+            </div>
+            <!-- Card 5 -->
+            <div class="why-us-card tilt-card" data-tilt>
+              <div class="why-icon teal-glow">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67" />
+                </svg>
+              </div>
+              <h3>Agile Methodology</h3>
+              <p>Iterative delivery that adapts to changing needs.</p>
+            </div>
+            <!-- Card 6 -->
+            <div class="why-us-card tilt-card" data-tilt>
+              <div class="why-icon teal-glow">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+              <h3>Dedicated Partnership</h3>
+              <p>Responsive support built for the long term.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Us Section -->
+      <section id="contact" class="contact-section">
+        <div class="section-container contact-wrapper">
+          <div class="contact-info">
+            <span class="section-subtitle">Get In Touch</span>
+            <h2 class="section-title">Let's Build Your Digital Future, Together</h2>
+            <p class="body-text">
+              Reach out to start the conversation on your next digital transformation initiative.
+            </p>
+            <div class="contact-details">
+              <!-- High Tech Contact Card matching Screenshot 4 -->
+              <div class="branding-contact-card glass-panel">
+                <div class="brand-item">
+                  <div class="brand-logo-node">
+                    <svg viewBox="0 0 100 100" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="100" height="100" rx="24" fill="#0D1F3D" />
+                      <line x1="25" y1="75" x2="25" y2="25" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" />
+                      <line x1="25" y1="25" x2="50" y2="55" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" />
+                      <line x1="50" y1="55" x2="75" y2="25" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" />
+                      <line x1="75" y1="25" x2="75" y2="75" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" />
+                      <circle cx="25" cy="75" r="7" fill="#FFFFFF" />
+                      <circle cx="25" cy="25" r="7" fill="#34D399" />
+                      <circle cx="50" cy="55" r="7" fill="#FFFFFF" />
+                      <circle cx="75" cy="25" r="7" fill="#34D399" />
+                      <circle cx="75" cy="75" r="7" fill="#FFFFFF" />
+                    </svg>
+                  </div>
+                  <span class="brand-name">MYNTARA TECHNOLOGIES PVT LTD</span>
+                </div>
+                <div class="brand-info-row">
+                  <div class="info-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                      <circle cx="12" cy="7" r="4" />
+                    </svg>
+                  </div>
+                  <span class="info-text"><strong>Founder:</strong> Mahipal Auragonda</span>
+                </div>
+                <div class="brand-info-row">
+                  <div class="info-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                  </div>
+                  <span class="info-text"><strong>Sales & Support:</strong> +91 82864 44716</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="contact-form-container glass-panel">
+            <form id="contact-form" class="contact-form" novalidate>
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required />
+                <span class="error-msg" id="name-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="john@example.com" required />
+                <span class="error-msg" id="email-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Project Consultation" required />
+                <span class="error-msg" id="subject-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Tell us about your project goals..." required></textarea>
+                <span class="error-msg" id="message-error"></span>
+              </div>
+              <button type="submit" class="submit-btn" id="submit-btn">
+                <span>Send Message</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13" />
+                  <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                </svg>
+              </button>
+              <div class="form-status" id="form-status"></div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+      <div class="section-container footer-grid">
+        <div class="footer-brand">
+          <div class="logo-area">
+            <svg viewBox="0 0 100 100" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100" height="100" rx="24" fill="#0D1F3D" />
+              <line x1="25" y1="75" x2="25" y2="25" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" />
+              <line x1="25" y1="25" x2="50" y2="55" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" />
+              <line x1="50" y1="55" x2="75" y2="25" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" />
+              <line x1="75" y1="25" x2="75" y2="75" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" />
+              <circle cx="25" cy="75" r="7" fill="#FFFFFF" />
+              <circle cx="25" cy="25" r="7" fill="#34D399" />
+              <circle cx="50" cy="55" r="7" fill="#FFFFFF" />
+              <circle cx="75" cy="25" r="7" fill="#34D399" />
+              <circle cx="75" cy="75" r="7" fill="#FFFFFF" />
+            </svg>
+            <span class="logo-text">MYNTARA</span>
+          </div>
+          <p class="footer-desc">
+            Partnering with organizations to deliver enterprise-grade digital transformation through AI, automation, and modern software architecture.
+          </p>
+        </div>
+        <div class="footer-nav">
+          <h4>Navigation</h4>
+          <a href="#hero">Home</a>
+          <a href="#who-we-are">Who We Are</a>
+          <a href="#services">Services</a>
+          <a href="#technologies">Technologies</a>
+          <a href="#lifecycle">Process</a>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact Info</h4>
+          <p>Bangalore, India</p>
+          <p>Email: <a href="mailto:info@myntara.com">info@myntara.com</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Myntara Technologies Pvt Ltd. All rights reserved.</p>
+        <p class="developer-credit">
+          Developed by <a href="https://santoshvarma.vercel.app/" target="_blank" rel="noopener noreferrer">santosh.dev</a>
+        </p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
